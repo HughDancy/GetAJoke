@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tabBarController.tabBar.backgroundColor = .white
         tabBarController.tabBar.tintColor = .purple
         
-        let firstViewController = ViewController()
+        let firstViewController = MainViewController()
         firstViewController.tabBarItem = UITabBarItem(title: "Main", image: UIImage(systemName: "poweroutlet.type.k.fill"), tag: 0)
         
         let secondViewController = FavoritesViewController()

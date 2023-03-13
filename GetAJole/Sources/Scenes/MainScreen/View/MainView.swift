@@ -26,7 +26,7 @@ class MainView: UIView {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupHierarchy()
-        setupHierarchy()
+        setupLayout()
         buttonsConfigurate()
     }
     
@@ -57,7 +57,7 @@ class MainView: UIView {
         }
         
         setupLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(50)
+            make.top.equalToSuperview().inset(100)
             make.centerX.equalToSuperview()
         }
         
@@ -67,28 +67,28 @@ class MainView: UIView {
         }
         
         jokeShadowView.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(150)
+            make.bottom.equalToSuperview().inset(180)
             make.trailing.equalToSuperview().inset(35)
             make.height.equalTo(50)
             make.width.equalTo(getJokeButton)
         }
         
         getJokeButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(150)
+            make.bottom.equalToSuperview().inset(180)
             make.trailing.equalToSuperview().inset(35)
             make.height.equalTo(50)
         }
         
         favoriteShadowView.snp.makeConstraints { make in
             make.top.equalTo(getJokeButton).inset(65)
-            make.trailing.equalToSuperview().inset(35)
+            make.centerX.equalTo(getJokeButton)
             make.height.equalTo(50)
             make.width.equalTo(getToFavoriteButton)
         }
         
         getToFavoriteButton.snp.makeConstraints { make in
             make.top.equalTo(getJokeButton).inset(65)
-            make.trailing.equalToSuperview().inset(35)
+            make.centerX.equalTo(getJokeButton)
             make.height.equalTo(50)
         }
     }
