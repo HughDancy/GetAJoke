@@ -17,6 +17,7 @@
 		D800B69C29BF535D0015D19C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = D800B69B29BF535D0015D19C /* Realm */; };
 		D800B69E29BF535D0015D19C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D800B69D29BF535D0015D19C /* RealmSwift */; };
 		D800B6A129BF54140015D19C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D800B6A029BF54140015D19C /* Alamofire */; };
+		D800B6A329BF5BF10015D19C /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800B6A229BF5BF10015D19C /* Joke.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D800B68129BF4B9F0015D19C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D800B68329BF4B9F0015D19C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D800B69529BF51060015D19C /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		D800B6A229BF5BF10015D19C /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		D800B68F29BF4F0C0015D19C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D800B6A229BF5BF10015D19C /* Joke.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D800B67A29BF4B9E0015D19C /* ViewController.swift in Sources */,
+				D800B6A329BF5BF10015D19C /* Joke.swift in Sources */,
 				D800B67629BF4B9E0015D19C /* AppDelegate.swift in Sources */,
 				D800B69629BF51070015D19C /* FavoritesViewController.swift in Sources */,
 				D800B67829BF4B9E0015D19C /* SceneDelegate.swift in Sources */,
