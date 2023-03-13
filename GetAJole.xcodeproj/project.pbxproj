@@ -13,6 +13,10 @@
 		D800B67F29BF4B9F0015D19C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D800B67E29BF4B9F0015D19C /* Assets.xcassets */; };
 		D800B68229BF4B9F0015D19C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D800B68029BF4B9F0015D19C /* LaunchScreen.storyboard */; };
 		D800B69629BF51070015D19C /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800B69529BF51060015D19C /* FavoritesViewController.swift */; };
+		D800B69929BF52C40015D19C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D800B69829BF52C40015D19C /* SnapKit */; };
+		D800B69C29BF535D0015D19C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = D800B69B29BF535D0015D19C /* Realm */; };
+		D800B69E29BF535D0015D19C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D800B69D29BF535D0015D19C /* RealmSwift */; };
+		D800B6A129BF54140015D19C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D800B6A029BF54140015D19C /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D800B69E29BF535D0015D19C /* RealmSwift in Frameworks */,
+				D800B6A129BF54140015D19C /* Alamofire in Frameworks */,
+				D800B69C29BF535D0015D19C /* Realm in Frameworks */,
+				D800B69929BF52C40015D19C /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +179,12 @@
 			dependencies = (
 			);
 			name = GetAJole;
+			packageProductDependencies = (
+				D800B69829BF52C40015D19C /* SnapKit */,
+				D800B69B29BF535D0015D19C /* Realm */,
+				D800B69D29BF535D0015D19C /* RealmSwift */,
+				D800B6A029BF54140015D19C /* Alamofire */,
+			);
 			productName = GetAJole;
 			productReference = D800B67229BF4B9E0015D19C /* GetAJole.app */;
 			productType = "com.apple.product-type.application";
@@ -199,6 +213,11 @@
 				Base,
 			);
 			mainGroup = D800B66929BF4B9E0015D19C;
+			packageReferences = (
+				D800B69729BF52C40015D19C /* XCRemoteSwiftPackageReference "SnapKit" */,
+				D800B69A29BF535D0015D19C /* XCRemoteSwiftPackageReference "realm-swift" */,
+				D800B69F29BF54140015D19C /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = D800B67329BF4B9E0015D19C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -436,6 +455,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D800B69729BF52C40015D19C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit#usage";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		D800B69A29BF535D0015D19C /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		D800B69F29BF54140015D19C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D800B69829BF52C40015D19C /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D800B69729BF52C40015D19C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		D800B69B29BF535D0015D19C /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D800B69A29BF535D0015D19C /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		D800B69D29BF535D0015D19C /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D800B69A29BF535D0015D19C /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		D800B6A029BF54140015D19C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D800B69F29BF54140015D19C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D800B66A29BF4B9E0015D19C /* Project object */;
 }
