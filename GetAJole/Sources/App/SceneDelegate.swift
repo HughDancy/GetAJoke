@@ -15,9 +15,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let tabBarController = UITabBarController()
+        tabBarController.tabBar.backgroundColor = .white
+        tabBarController.tabBar.tintColor = .purple
+        
+        let firstViewController = ViewController()
+        firstViewController.tabBarItem = UITabBarItem(title: "Main", image: UIImage(systemName: "poweroutlet.type.k.fill"), tag: 0)
+        
+        let secondViewController = FavoritesViewController()
+        secondViewController.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "star.fill"), tag: 1)
+        
+        tabBarController.setViewControllers([
+            firstViewController,
+            secondViewController
+        ], animated: true)
+        
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
-        window?.rootViewController = ViewController()
+        
+        window?.rootViewController = tabBarController
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
