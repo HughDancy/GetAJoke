@@ -59,11 +59,13 @@ class MainView: UIView {
         setupLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(100)
             make.centerX.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(20)
         }
         
         punchLabel.snp.makeConstraints { make in
-            make.top.equalTo(setupLabel).inset(25)
+            make.top.equalTo(setupLabel).inset(45)
             make.centerX.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(20)
         }
         
         jokeShadowView.snp.makeConstraints { make in
@@ -99,7 +101,7 @@ class MainView: UIView {
         
         var getConfiguration = UIButton.Configuration.filled()
         getConfiguration.baseBackgroundColor = .purple
-        getConfiguration.title = "Get new statement"
+        getConfiguration.title = "Get a new Joke"
         getConfiguration.titleAlignment = .center
         
         var favoriteConfigutation = UIButton.Configuration.filled()

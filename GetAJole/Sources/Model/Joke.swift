@@ -13,6 +13,7 @@ import RealmSwift
     
     dynamic var setup: String = ""
     dynamic var punchline: String = ""
+    
 
     enum CodingKeys: String, CodingKey {
         case setup
@@ -22,19 +23,21 @@ import RealmSwift
     required init(from decoder: Decoder) throws {
         
         let container = try! decoder.container(keyedBy: CodingKeys.self)
-        
+       
         setup = try container.decode(String.self, forKey: .setup)
         punchline = try container.decode(String.self, forKey: .punchline)
         
         super.init()
     }
     
-    override static func primaryKey() -> String? {
-        return "setup"
-    }
-    
    override required init() {
             super.init()
         }
     
+}
+
+struct Temp {
+    
+    var setup: String
+    var punch: String
 }
