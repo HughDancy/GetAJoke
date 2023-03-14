@@ -7,8 +7,6 @@
 
 import UIKit
 import Alamofire
-import Realm
-import RealmSwift
 
 class MainViewController: UIViewController {
     
@@ -18,8 +16,8 @@ class MainViewController: UIViewController {
         guard isViewLoaded else { return nil }
         return view as? MainView
     }
-    
-    var temponary = Temp(setup: "", punch: "")
+
+    lazy var dataBaseManager = DBManager()
     
     //MARK: - Lifecycle
 
@@ -28,7 +26,6 @@ class MainViewController: UIViewController {
         view = MainView()
         mainView?.getJokeButton.addTarget(self, action: #selector(getJoke), for: .touchDown)
         mainView?.getToFavoriteButton.addTarget(self, action: #selector(saveJoke), for: .touchDown)
-        // Do any additional setup after loading the view.
     }
     
     //MARK: - Button's Action
@@ -38,8 +35,8 @@ class MainViewController: UIViewController {
         request.responseDecodable(of: Joke.self) { data in
             guard let randomJoke = data.value else { return }
         
-            self.temponary.setup = randomJoke.setup
-            self.temponary.punch = randomJoke.punchline
+            self.dataBaseManager.setup = randomJoke.setup
+            self.dataBaseManager.punch = randomJoke.punchline
             
             DispatchQueue.main.async {
                 self.mainView?.setupLabel.text = randomJoke.setup
@@ -49,20 +46,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func saveJoke() {
-        
-        let joker = Joke()
-        joker.setup =  self.temponary.setup
-        joker.punchline = self.temponary.punch
-        
-        let realm = try! Realm()
-        
-        try! realm.write({
-            realm.add(joker)
-        })
-        
-        for i in realm.objects(Joke.self) {
-            print(i)
-        }
+        dataBaseManager.save()
     }
 
 }

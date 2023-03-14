@@ -23,7 +23,6 @@ import RealmSwift
     required init(from decoder: Decoder) throws {
         
         let container = try! decoder.container(keyedBy: CodingKeys.self)
-       
         setup = try container.decode(String.self, forKey: .setup)
         punchline = try container.decode(String.self, forKey: .punchline)
         
@@ -33,11 +32,5 @@ import RealmSwift
    override required init() {
             super.init()
         }
-    
 }
 
-struct Temp {
-    
-    var setup: String
-    var punch: String
-}

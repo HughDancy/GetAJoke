@@ -20,6 +20,7 @@
 		D800B6A329BF5BF10015D19C /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800B6A229BF5BF10015D19C /* Joke.swift */; };
 		D800B6A529BF5C930015D19C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800B6A429BF5C930015D19C /* MainView.swift */; };
 		D800B6A729BF5D460015D19C /* GlobalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800B6A629BF5D460015D19C /* GlobalFunction.swift */; };
+		D800B6A929C065CF0015D19C /* DBMangaer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800B6A829C065CF0015D19C /* DBMangaer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D800B6A229BF5BF10015D19C /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 		D800B6A429BF5C930015D19C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D800B6A629BF5D460015D19C /* GlobalFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunction.swift; sourceTree = "<group>"; };
+		D800B6A829C065CF0015D19C /* DBMangaer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMangaer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				D800B6A229BF5BF10015D19C /* Joke.swift */,
 				D800B6A629BF5D460015D19C /* GlobalFunction.swift */,
+				D800B6A829C065CF0015D19C /* DBMangaer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				D800B67A29BF4B9E0015D19C /* MainViewController.swift in Sources */,
 				D800B6A529BF5C930015D19C /* MainView.swift in Sources */,
 				D800B6A729BF5D460015D19C /* GlobalFunction.swift in Sources */,
+				D800B6A929C065CF0015D19C /* DBMangaer.swift in Sources */,
 				D800B6A329BF5BF10015D19C /* Joke.swift in Sources */,
 				D800B67629BF4B9E0015D19C /* AppDelegate.swift in Sources */,
 				D800B69629BF51070015D19C /* FavoritesViewController.swift in Sources */,

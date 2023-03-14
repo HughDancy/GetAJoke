@@ -13,8 +13,8 @@ class MainView: UIView {
     //MARK: - Subview's
     
     let backgroundImage = createMainImageView(with: "background")
-    let setupLabel = createMainLabel(with: "You wanna a joke?")
-    let punchLabel = createMainLabel(with: "Poor bustard!")
+    let setupLabel = createMainLabel(with: "Do you want a joke?")
+    let punchLabel = createMainLabel(with: "Sick bastard!")
     lazy var getJokeButton = createMainButton(cornerRadius: 25)
     lazy var getToFavoriteButton = createMainButton(cornerRadius: 25)
     let jokeShadowView = createShadowView(cornerRadius: 25)
