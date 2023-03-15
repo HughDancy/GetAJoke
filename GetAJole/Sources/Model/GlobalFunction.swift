@@ -46,3 +46,23 @@ func createMainButton(cornerRadius: CGFloat) -> UIButton {
     
     return button
 }
+
+func createFavoritesTableView() -> UITableView {
+    let tableView = UITableView(frame: .zero, style: .plain)
+    tableView.backgroundColor = .white
+    tableView.showsHorizontalScrollIndicator = false
+    tableView.register(FavoritesCell.self, forCellReuseIdentifier: "favoritesCell")
+    tableView.separatorStyle = .none
+//    tableView.register(cell, forCellReuseIdentifier: cell.reuseIdentifier)
+    
+    return tableView
+}
+
+func createBackView(cornerRadius: CGFloat) -> UIView {
+    let view = UIView()
+    view.backgroundColor = .white
+    view.layer.cornerRadius = cornerRadius
+    view.clipsToBounds = true
+    
+    return view
+}
