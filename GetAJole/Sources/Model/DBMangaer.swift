@@ -26,6 +26,7 @@ class DBManager {
         
         for i in realm.objects(Joke.self) {
             print(i)
+            print(type(of: realm.objects(Joke.self)))
         }
     }
 }
