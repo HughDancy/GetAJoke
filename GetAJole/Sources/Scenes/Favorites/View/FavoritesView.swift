@@ -20,13 +20,14 @@ class FavoritesView: UIView {
     }()
     
     let favoritesTableView = createFavoritesTableView()
+    let label = createFavoriteLabel(with: "Favorite Jokes", size: 35)
     
     //MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
         backgroundColor = .systemGray6
-        addSubview(favoritesTableView)
+        setupHierarchy()
         setupLayout()
         favoritesTableView.delegate = self
         favoritesTableView.dataSource = self
@@ -36,17 +37,30 @@ class FavoritesView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Setup Hierarchy
+    
+    private func setupHierarchy() {
+        addSubview(label)
+        addSubview(favoritesTableView)
+    }
+    
     //MARK: - Setup Layout
     
     private func setupLayout() {
+        label.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(55)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(37)
+        }
         
         favoritesTableView.snp.makeConstraints { make in
-            make.top.leading.trailing.bottom.equalToSuperview()
+            make.top.equalTo(label).inset(45)
+            make.leading.trailing.bottom.equalToSuperview()
         }
     }
 }
 
-   //MARK: - TableView Extension
+//MARK: - TableView Extension
 
 extension FavoritesView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,6 +75,10 @@ extension FavoritesView: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let animation = makeMoveUpWithFadeAnimation(rowHeight: 150, duration: 0.85, delayFactor: 0.02)
+        let animator = TableViewAnimator(animation: animation)
+        animator.animate(cell: cell, at: indexPath, in: tableView)
+    }
 }
 

@@ -14,7 +14,7 @@ import RealmSwift
     dynamic var setup: String = ""
     dynamic var punchline: String = ""
     
-
+    
     enum CodingKeys: String, CodingKey {
         case setup
         case punchline
@@ -29,8 +29,8 @@ import RealmSwift
         super.init()
     }
     
-   override required init() {
-            super.init()
-        }
+    override required init() {
+        super.init()
+    }
 }
 

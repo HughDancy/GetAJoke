@@ -23,6 +23,7 @@
 		D800B6A929C065CF0015D19C /* DBMangaer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800B6A829C065CF0015D19C /* DBMangaer.swift */; };
 		D800B6AD29C06A6A0015D19C /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800B6AC29C06A6A0015D19C /* FavoritesView.swift */; };
 		D800B6B029C07DAB0015D19C /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800B6AF29C07DAB0015D19C /* FavoritesCell.swift */; };
+		D800B6B229C1ABBA0015D19C /* TableViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800B6B129C1ABBA0015D19C /* TableViewAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		D800B6A829C065CF0015D19C /* DBMangaer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMangaer.swift; sourceTree = "<group>"; };
 		D800B6AC29C06A6A0015D19C /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		D800B6AF29C07DAB0015D19C /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
+		D800B6B129C1ABBA0015D19C /* TableViewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				D800B6A229BF5BF10015D19C /* Joke.swift */,
 				D800B6A629BF5D460015D19C /* GlobalFunction.swift */,
 				D800B6A829C065CF0015D19C /* DBMangaer.swift */,
+				D800B6B129C1ABBA0015D19C /* TableViewAnimator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				D800B67A29BF4B9E0015D19C /* MainViewController.swift in Sources */,
 				D800B6A529BF5C930015D19C /* MainView.swift in Sources */,
 				D800B6A729BF5D460015D19C /* GlobalFunction.swift in Sources */,
+				D800B6B229C1ABBA0015D19C /* TableViewAnimator.swift in Sources */,
 				D800B6B029C07DAB0015D19C /* FavoritesCell.swift in Sources */,
 				D800B6A929C065CF0015D19C /* DBMangaer.swift in Sources */,
 				D800B6A329BF5BF10015D19C /* Joke.swift in Sources */,

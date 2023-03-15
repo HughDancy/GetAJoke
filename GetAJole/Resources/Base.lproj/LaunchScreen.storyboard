@@ -26,7 +26,7 @@
                                     <constraint firstAttribute="width" constant="367" id="aIP-Y0-NOE"/>
                                     <constraint firstAttribute="height" constant="85" id="yYO-pF-Fp1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="79"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="70"/>
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <color key="highlightedColor" systemColor="systemYellowColor"/>
                                 <color key="shadowColor" systemColor="labelColor"/>

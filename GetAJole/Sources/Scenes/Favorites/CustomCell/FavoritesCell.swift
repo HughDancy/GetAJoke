@@ -13,17 +13,17 @@ class FavoritesCell: UITableViewCell {
     //MARK: - Subview's
     
     let baseView = createBackView(cornerRadius: 20)
-    let setupLabel = createMainLabel(with: "Test")
-    let punchLabel = createMainLabel(with: "Simple")
+    let setupLabel = createSimpleLabel(with: "Test", size: 20)
+    let punchLabel = createSimpleLabel(with: "Simple", size: 20)
     
     //MARK: - Init
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: "favoritesCell")
-        backgroundColor = .systemGray6
+        self.backgroundColor = .systemGray6
         setupHierarchy()
         setupLayout()
-
+        
     }
     
     required init?(coder: NSCoder) {
@@ -33,7 +33,7 @@ class FavoritesCell: UITableViewCell {
     //MARK: - Setup Hierarchy
     
     private func setupHierarchy() {
-
+        
         baseView.addSubview(setupLabel)
         baseView.addSubview(punchLabel)
         addSubview(baseView)
@@ -47,17 +47,17 @@ class FavoritesCell: UITableViewCell {
         baseView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(5)
             make.leading.trailing.equalToSuperview().inset(20)
-            make.height.equalTo(150)
+            make.height.equalTo(165)
         }
         
         setupLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(30)
+            make.top.equalToSuperview().inset(20)
             make.leading.trailing.equalToSuperview().inset(20)
             make.centerX.equalToSuperview()
         }
         
         punchLabel.snp.makeConstraints { make in
-            make.top.equalTo(setupLabel).inset(45)
+            make.top.equalTo(setupLabel).inset(65)
             make.leading.trailing.equalToSuperview().inset(20)
             make.centerX.equalToSuperview()
         }
@@ -65,15 +65,15 @@ class FavoritesCell: UITableViewCell {
     }
     
     
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
-//
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
-
+    //    override func awakeFromNib() {
+    //        super.awakeFromNib()
+    //        // Initialization code
+    //    }
+    //
+    //    override func setSelected(_ selected: Bool, animated: Bool) {
+    //        super.setSelected(selected, animated: animated)
+    //
+    //        // Configure the view for the selected state
+    //    }
+    
 }

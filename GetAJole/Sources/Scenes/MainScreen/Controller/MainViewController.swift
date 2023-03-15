@@ -16,11 +16,11 @@ class MainViewController: UIViewController {
         guard isViewLoaded else { return nil }
         return view as? MainView
     }
-
+    
     lazy var dataBaseManager = DBManager()
     
     //MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view = MainView()
@@ -34,7 +34,7 @@ class MainViewController: UIViewController {
         let request = AF.request("https://official-joke-api.appspot.com/jokes/random")
         request.responseDecodable(of: Joke.self) { data in
             guard let randomJoke = data.value else { return }
-        
+            
             self.dataBaseManager.setup = randomJoke.setup
             self.dataBaseManager.punch = randomJoke.punchline
             
@@ -48,6 +48,6 @@ class MainViewController: UIViewController {
     @objc func saveJoke() {
         dataBaseManager.save()
     }
-
+    
 }
 
