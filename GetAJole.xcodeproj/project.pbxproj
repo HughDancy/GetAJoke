@@ -24,6 +24,7 @@
 		D800B6AD29C06A6A0015D19C /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800B6AC29C06A6A0015D19C /* FavoritesView.swift */; };
 		D800B6B029C07DAB0015D19C /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800B6AF29C07DAB0015D19C /* FavoritesCell.swift */; };
 		D800B6B229C1ABBA0015D19C /* TableViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800B6B129C1ABBA0015D19C /* TableViewAnimator.swift */; };
+		D800B6B729C20E390015D19C /* UILabel+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800B6B629C20E390015D19C /* UILabel+Extention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		D800B6AC29C06A6A0015D19C /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		D800B6AF29C07DAB0015D19C /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		D800B6B129C1ABBA0015D19C /* TableViewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAnimator.swift; sourceTree = "<group>"; };
+		D800B6B629C20E390015D19C /* UILabel+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extention.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		D800B69029BF4F1C0015D19C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D800B6B329C20DE80015D19C /* Extentions */,
 				D800B69229BF4F790015D19C /* Favorites */,
 				D800B69129BF4F240015D19C /* MainScreen */,
 			);
@@ -190,6 +193,14 @@
 				D800B6AF29C07DAB0015D19C /* FavoritesCell.swift */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		D800B6B329C20DE80015D19C /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				D800B6B629C20E390015D19C /* UILabel+Extention.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +289,7 @@
 				D800B6A729BF5D460015D19C /* GlobalFunction.swift in Sources */,
 				D800B6B229C1ABBA0015D19C /* TableViewAnimator.swift in Sources */,
 				D800B6B029C07DAB0015D19C /* FavoritesCell.swift in Sources */,
+				D800B6B729C20E390015D19C /* UILabel+Extention.swift in Sources */,
 				D800B6A929C065CF0015D19C /* DBMangaer.swift in Sources */,
 				D800B6A329BF5BF10015D19C /* Joke.swift in Sources */,
 				D800B67629BF4B9E0015D19C /* AppDelegate.swift in Sources */,
