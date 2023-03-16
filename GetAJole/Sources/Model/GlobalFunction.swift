@@ -52,6 +52,7 @@ func createMainButton(cornerRadius: CGFloat) -> UIButton {
     let button = UIButton()
     button.layer.cornerRadius = cornerRadius
     button.clipsToBounds = true
+    button.titleLabel?.font = UIFont(name: "Noteworthy-Bold", size: 15)
     
     return button
 }

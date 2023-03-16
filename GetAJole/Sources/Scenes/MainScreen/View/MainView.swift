@@ -14,7 +14,7 @@ class MainView: UIView {
     
     let backgroundImage = createMainImageView(with: "background")
     let setupLabel = createSimpleLabel(with: "Do you want a joke?", size: 25)
-    let punchLabel = createSimpleLabel(with: "Sick bastard!", size:  25)
+//    let punchLabel = createSimpleLabel(with: "Sick bastard!", size:  25)
     lazy var getJokeButton = createMainButton(cornerRadius: 25)
     lazy var getToFavoriteButton = createMainButton(cornerRadius: 25)
     let jokeShadowView = createShadowView(cornerRadius: 25)
@@ -40,7 +40,7 @@ class MainView: UIView {
         addSubview(backgroundImage)
         sendSubviewToBack(backgroundImage)
         addSubview(setupLabel)
-        addSubview(punchLabel)
+//        addSubview(punchLabel)
         addSubview(jokeShadowView)
         addSubview(getJokeButton)
         addSubview(favoriteShadowView)
@@ -62,11 +62,11 @@ class MainView: UIView {
             make.leading.trailing.equalToSuperview().inset(20)
         }
         
-        punchLabel.snp.makeConstraints { make in
-            make.top.equalTo(setupLabel).inset(55)
-            make.centerX.equalToSuperview()
-            make.leading.trailing.equalToSuperview().inset(20)
-        }
+//        punchLabel.snp.makeConstraints { make in
+//            make.top.equalTo(setupLabel).inset(55)
+//            make.centerX.equalToSuperview()
+//            make.leading.trailing.equalToSuperview().inset(20)
+//        }
         
         jokeShadowView.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(180)

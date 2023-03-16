@@ -39,8 +39,7 @@ class MainViewController: UIViewController {
             self.dataBaseManager.punch = randomJoke.punchline
             
             DispatchQueue.main.async {
-                self.mainView?.setupLabel.setTyping(text: randomJoke.setup)
-                self.mainView?.punchLabel.setTyping(text: randomJoke.punchline)
+                self.mainView?.setupLabel.setTyping(text: "\(randomJoke.setup) \n \(randomJoke.punchline)")
             }
         }
     }
