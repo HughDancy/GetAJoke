@@ -13,15 +13,13 @@ import RealmSwift
     
     dynamic var setup: String = ""
     dynamic var punchline: String = ""
-    
-    
+
     enum CodingKeys: String, CodingKey {
         case setup
         case punchline
     }
     
     required init(from decoder: Decoder) throws {
-        
         let container = try! decoder.container(keyedBy: CodingKeys.self)
         setup = try container.decode(String.self, forKey: .setup)
         punchline = try container.decode(String.self, forKey: .punchline)

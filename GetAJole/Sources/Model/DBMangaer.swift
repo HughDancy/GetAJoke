@@ -8,7 +8,7 @@
 import Realm
 import RealmSwift
 
-class DBManager {
+final class DBManager {
     
     var setup = ""
     var punch = ""

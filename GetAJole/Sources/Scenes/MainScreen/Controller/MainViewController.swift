@@ -10,8 +10,7 @@ import Alamofire
 
 class MainViewController: UIViewController {
     
-    //MARK: - Subview's
-    
+    // MARK: - Subview's
     private var mainView: MainView? {
         guard isViewLoaded else { return nil }
         return view as? MainView
@@ -19,8 +18,7 @@ class MainViewController: UIViewController {
     
     lazy var dataBaseManager = DBManager()
     
-    //MARK: - Lifecycle
-    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view = MainView()
@@ -28,8 +26,7 @@ class MainViewController: UIViewController {
         mainView?.getToFavoriteButton.addTarget(self, action: #selector(saveJoke), for: .touchDown)
     }
     
-    //MARK: - Button's Action
-    
+    // MARK: - Button's Action
     @objc func getJoke() {
         let request = AF.request("https://official-joke-api.appspot.com/jokes/random")
         request.responseDecodable(of: Joke.self) { data in
@@ -47,6 +44,5 @@ class MainViewController: UIViewController {
     @objc func saveJoke() {
         dataBaseManager.save()
     }
-    
 }
 

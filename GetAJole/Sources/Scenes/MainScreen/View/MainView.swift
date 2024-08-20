@@ -10,19 +10,16 @@ import SnapKit
 
 class MainView: UIView {
     
-    //MARK: - Subview's
-    
+    // MARK: - Subview's
     let backgroundImage = createMainImageView(with: "background")
     let setupLabel = createSimpleLabel(with: "Do you want a joke?", size: 25)
-//    let punchLabel = createSimpleLabel(with: "Sick bastard!", size:  25)
     lazy var getJokeButton = createMainButton(cornerRadius: 25)
     lazy var getToFavoriteButton = createMainButton(cornerRadius: 25)
     let jokeShadowView = createShadowView(cornerRadius: 25)
     let favoriteShadowView = createShadowView(cornerRadius: 25)
     
     
-    //MARK: - Init
-    
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupHierarchy()
@@ -34,13 +31,11 @@ class MainView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Setup Hierarchy
-    
+    // MARK: - Setup Hierarchy
     private func setupHierarchy() {
         addSubview(backgroundImage)
         sendSubviewToBack(backgroundImage)
         addSubview(setupLabel)
-//        addSubview(punchLabel)
         addSubview(jokeShadowView)
         addSubview(getJokeButton)
         addSubview(favoriteShadowView)
@@ -50,7 +45,6 @@ class MainView: UIView {
     //MARK: - Setup Layout
     
     private func setupLayout() {
-        
         backgroundImage.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview().offset(75)
@@ -61,12 +55,6 @@ class MainView: UIView {
             make.centerX.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(20)
         }
-        
-//        punchLabel.snp.makeConstraints { make in
-//            make.top.equalTo(setupLabel).inset(55)
-//            make.centerX.equalToSuperview()
-//            make.leading.trailing.equalToSuperview().inset(20)
-//        }
         
         jokeShadowView.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(180)
@@ -95,10 +83,8 @@ class MainView: UIView {
         }
     }
     
-    //MARK: - Button's Configuration
-    
+    // MARK: - Button's Configuration
     private func buttonsConfigurate() {
-        
         var getConfiguration = UIButton.Configuration.filled()
         getConfiguration.baseBackgroundColor = .purple
         getConfiguration.title = "Get a new Joke"

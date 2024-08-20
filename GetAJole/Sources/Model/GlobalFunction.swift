@@ -63,7 +63,6 @@ func createFavoritesTableView() -> UITableView {
     tableView.showsVerticalScrollIndicator = false
     tableView.register(FavoritesCell.self, forCellReuseIdentifier: "favoritesCell")
     tableView.separatorStyle = .none
-    //    tableView.register(cell, forCellReuseIdentifier: cell.reuseIdentifier)
     
     return tableView
 }

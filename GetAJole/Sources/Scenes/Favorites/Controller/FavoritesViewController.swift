@@ -26,5 +26,4 @@ class FavoritesViewController: UIViewController {
         super.viewDidLoad()
         view = FavoritesView()
     }
-    
 }
