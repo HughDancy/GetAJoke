@@ -32,11 +32,11 @@ class MainViewController: UIViewController {
     
     // MARK: - Button's Action
     @objc func getJoke() {
-        networkManager.getRandomJoke { joke in
-            self.setup = joke.setup
-            self.punch = joke.punchline
+        networkManager.getRandomJoke { [weak self] joke in
+            self?.setup = joke.setup
+            self?.punch = joke.punchline
             DispatchQueue.main.async {
-                self.mainView?.setupLabel.setTyping(text: "\(joke.setup) \n \(joke.punchline)")
+                self?.mainView?.setupLabel.setTyping(text: "\(joke.setup) \n \(joke.punchline)")
             }
         }
     }

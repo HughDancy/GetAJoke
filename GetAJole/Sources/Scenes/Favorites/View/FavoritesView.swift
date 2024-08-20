@@ -7,18 +7,12 @@
 
 import UIKit
 import SnapKit
-import Realm
-import RealmSwift
 
 class FavoritesView: UIView {
     
     //MARK: - Subview
-    
-    var model: Results<Joke> = {
-        let realm = try! Realm()
-        return realm.objects(Joke.self)
-    }()
-    
+    private let databaseManager: FavoritesDatabaseProtocol = FavoritesDataBaseManager()
+
     let favoritesTableView = createFavoritesTableView()
     let label = createFavoriteLabel(with: "Favorite Jokes", size: 35)
     
@@ -64,11 +58,13 @@ class FavoritesView: UIView {
 
 extension FavoritesView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.count
+        let jokes = databaseManager.getSavedJokes()
+        return jokes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoritesCell", for: indexPath) as! FavoritesCell
+        let model = databaseManager.getSavedJokes()
         cell.setupLabel.text = model[indexPath.row].setup
         cell.punchLabel.text = model[indexPath.row].punchline
         
