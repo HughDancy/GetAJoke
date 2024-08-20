@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class MainViewController: UIViewController {
     
@@ -21,6 +20,7 @@ class MainViewController: UIViewController {
     }
     
     lazy var dataBaseManager: DataBaseSavingProtocol = MainScreenDataBaseManager()
+    lazy var networkManager: MainScreenNetworkManagerProtocol = MainScreenNetworkManager()
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -32,14 +32,11 @@ class MainViewController: UIViewController {
     
     // MARK: - Button's Action
     @objc func getJoke() {
-        let request = AF.request("https://official-joke-api.appspot.com/jokes/random")
-        request.responseDecodable(of: Joke.self) { data in
-            guard let randomJoke = data.value else { return }
-            self.setup = randomJoke.setup
-            self.punch = randomJoke.punchline
-            
+        networkManager.getRandomJoke { joke in
+            self.setup = joke.setup
+            self.punch = joke.punchline
             DispatchQueue.main.async {
-                self.mainView?.setupLabel.setTyping(text: "\(randomJoke.setup) \n \(randomJoke.punchline)")
+                self.mainView?.setupLabel.setTyping(text: "\(joke.setup) \n \(joke.punchline)")
             }
         }
     }
