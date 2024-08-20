@@ -59,7 +59,7 @@ func createMainButton(cornerRadius: CGFloat) -> UIButton {
 
 func createFavoritesTableView() -> UITableView {
     let tableView = UITableView(frame: .zero, style: .plain)
-    tableView.backgroundColor = .systemGray6
+    tableView.backgroundColor = .systemGray5
     tableView.showsVerticalScrollIndicator = false
     tableView.register(FavoritesCell.self, forCellReuseIdentifier: "favoritesCell")
     tableView.separatorStyle = .none

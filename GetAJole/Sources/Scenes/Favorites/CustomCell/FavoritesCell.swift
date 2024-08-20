@@ -8,19 +8,23 @@
 import UIKit
 import SnapKit
 
-class FavoritesCell: UITableViewCell {
+final class FavoritesCell: UITableViewCell {
     
-    //MARK: - Subview's
-    
-    let baseView = createBackView(cornerRadius: 20)
-    let setupLabel = createSimpleLabel(with: "Test", size: 20)
-    let punchLabel = createSimpleLabel(with: "Simple", size: 20)
-    
+    // MARK: - Subview's
+    private let baseView = createBackView(cornerRadius: 20)
+    private lazy var numberLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = UIFont(name: "Marker Felt Thin", size: 20)
+        return label
+    }()
+    private let setupLabel = createSimpleLabel(with: "Test", size: 20)
+    private let punchLabel = createSimpleLabel(with: "Simple", size: 20)
+
     //MARK: - Init
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: "favoritesCell")
-        self.backgroundColor = .systemGray6
+        self.backgroundColor = .systemGray5
         setupHierarchy()
         setupLayout()
         
@@ -29,29 +33,36 @@ class FavoritesCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    //MARK: - Setup Hierarchy
-    
+
+    override func prepareForReuse() {
+        self.setupLabel.text = nil
+        self.numberLabel.text = nil
+        self.punchLabel.text = nil
+    }
+
+    // MARK: - Setup Hierarchy
     private func setupHierarchy() {
-        
+        baseView.addSubview(numberLabel)
         baseView.addSubview(setupLabel)
         baseView.addSubview(punchLabel)
         addSubview(baseView)
     }
     
     
-    //MARK: - SetupLayout
-    
+    // MARK: - SetupLayout
     private func setupLayout() {
-        
         baseView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(5)
             make.leading.trailing.equalToSuperview().inset(20)
             make.height.equalTo(165)
         }
-        
+
+        numberLabel.snp.makeConstraints { make in
+            make.top.leading.equalTo(baseView.safeAreaLayoutGuide).offset(8)
+        }
+
         setupLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(20)
+            make.top.equalTo(numberLabel.snp.bottom).offset(10)
             make.leading.trailing.equalToSuperview().inset(20)
             make.centerX.equalToSuperview()
         }
@@ -61,19 +72,12 @@ class FavoritesCell: UITableViewCell {
             make.leading.trailing.equalToSuperview().inset(20)
             make.centerX.equalToSuperview()
         }
-        
     }
-    
-    
-    //    override func awakeFromNib() {
-    //        super.awakeFromNib()
-    //        // Initialization code
-    //    }
-    //
-    //    override func setSelected(_ selected: Bool, animated: Bool) {
-    //        super.setSelected(selected, animated: animated)
-    //
-    //        // Configure the view for the selected state
-    //    }
-    
+
+    // MARK: - Setup Cell public method
+    func setupCell(number: Int, setup: String, punch: String) {
+        self.numberLabel.text = "# \(number + 1)"
+        self.setupLabel.text = setup
+        self.punchLabel.text = punch
+    }
 }

@@ -20,7 +20,7 @@ class FavoritesView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        backgroundColor = .systemGray6
+        backgroundColor = .systemGray5
         setupHierarchy()
         setupLayout()
         favoritesTableView.delegate = self
@@ -63,11 +63,9 @@ extension FavoritesView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "favoritesCell", for: indexPath) as! FavoritesCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "favoritesCell", for: indexPath) as? FavoritesCell else { return UITableViewCell() }
         let model = databaseManager.getSavedJokes()
-        cell.setupLabel.text = model[indexPath.row].setup
-        cell.punchLabel.text = model[indexPath.row].punchline
-        
+        cell.setupCell(number: indexPath.row, setup: model[indexPath.row].setup, punch: model[indexPath.row].punchline)
         return cell
     }
     
