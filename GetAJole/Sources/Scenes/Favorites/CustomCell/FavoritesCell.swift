@@ -27,7 +27,6 @@ final class FavoritesCell: UITableViewCell {
         self.backgroundColor = .systemGray5
         setupHierarchy()
         setupLayout()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -47,7 +46,6 @@ final class FavoritesCell: UITableViewCell {
         baseView.addSubview(punchLabel)
         addSubview(baseView)
     }
-    
     
     // MARK: - SetupLayout
     private func setupLayout() {

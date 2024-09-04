@@ -9,15 +9,13 @@ import UIKit
 
 class FavoritesViewController: UIViewController {
     
-    //MARK: - Subview's
-    
+    // MARK: - Subview's
     private var mainView: FavoritesView? {
         guard isViewLoaded else { return nil }
         return view as? FavoritesView
     }
     
-    //MARK: - Lifecycle
-    
+    // MARK: - Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         mainView?.favoritesTableView.reloadData()
     }

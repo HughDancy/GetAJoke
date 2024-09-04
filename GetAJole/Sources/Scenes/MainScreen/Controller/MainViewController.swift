@@ -10,7 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     // MARK: - Properties
-    private var setup = ""
+    private var setup: String = ""
     private var punch = ""
 
     // MARK: - Subview's

@@ -10,14 +10,12 @@ import SnapKit
 
 class FavoritesView: UIView {
     
-    //MARK: - Subview
+    // MARK: - Subview
     private let databaseManager: FavoritesDatabaseProtocol = FavoritesDataBaseManager()
-
     let favoritesTableView = createFavoritesTableView()
     let label = createFavoriteLabel(with: "Favorite Jokes", size: 35)
     
-    //MARK: - Init
-    
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: .zero)
         backgroundColor = .systemGray5
@@ -31,15 +29,13 @@ class FavoritesView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Setup Hierarchy
-    
+    // MARK: - Setup Hierarchy
     private func setupHierarchy() {
         addSubview(label)
         addSubview(favoritesTableView)
     }
     
-    //MARK: - Setup Layout
-    
+    // MARK: - Setup Layout
     private func setupLayout() {
         label.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(55)
@@ -54,8 +50,7 @@ class FavoritesView: UIView {
     }
 }
 
-//MARK: - TableView Extension
-
+      // MARK: - TableView Extension
 extension FavoritesView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let jokes = databaseManager.getSavedJokes()

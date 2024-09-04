@@ -7,14 +7,6 @@
 
 import UIKit
 
-func createMainImageView(with imageName: String) -> UIImageView {
-    let imageView = UIImageView()
-    imageView.image = UIImage(named: imageName)
-    imageView.contentMode = .scaleAspectFill
-    imageView.translatesAutoresizingMaskIntoConstraints = false
-    
-    return imageView
-}
 
 func createShadowView(cornerRadius: CGFloat) -> UIView {
     let view = UIView()

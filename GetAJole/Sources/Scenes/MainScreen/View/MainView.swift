@@ -11,7 +11,14 @@ import SnapKit
 class MainView: UIView {
     
     // MARK: - Subview's
-    let backgroundImage = createMainImageView(with: "background")
+    private lazy var backgroundImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "background")
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+
     let setupLabel = createSimpleLabel(with: "Do you want a joke?", size: 25)
     lazy var getJokeButton = createMainButton(cornerRadius: 25)
     lazy var getToFavoriteButton = createMainButton(cornerRadius: 25)
