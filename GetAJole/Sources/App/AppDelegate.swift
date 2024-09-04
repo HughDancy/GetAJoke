@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.tabBar.tintColor = .purple
         
         let firstViewController = MainViewController()
-        firstViewController.tabBarItem = UITabBarItem(title: "Main", image: UIImage(systemName: "poweroutlet.type.k.fill"), tag: 0)
+        firstViewController.tabBarItem = UITabBarItem(title: "Main", image: UIImage(systemName: "face.smiling.inverse"), tag: 0)
         
         let secondViewController = FavoritesViewController()
         secondViewController.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "star.fill"), tag: 1)
