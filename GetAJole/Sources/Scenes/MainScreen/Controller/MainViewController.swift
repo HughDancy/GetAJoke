@@ -10,8 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     // MARK: - Properties
-    private var setup: String = ""
-    private var punch = ""
+    private let cache = Cache<String, String>()
 
     // MARK: - Subview's
     private var mainView: MainView? {
@@ -33,8 +32,7 @@ class MainViewController: UIViewController {
     // MARK: - Button's Action
     @objc func getJoke() {
         networkManager.getRandomJoke { [weak self] joke in
-            self?.setup = joke.setup
-            self?.punch = joke.punchline
+            self?.updateCache(setup: joke.setup, punchline: joke.punchline)
             DispatchQueue.main.async {
                 self?.mainView?.setupLabel.setTyping(text: "\(joke.setup) \n \(joke.punchline)")
             }
@@ -42,7 +40,21 @@ class MainViewController: UIViewController {
     }
     
     @objc func saveJoke() {
-        dataBaseManager.saveJoke(setup: self.setup, punch: self.punch)
+        let setup = self.cache.value(forKey: CacheKeys.setup.rawValue)
+        let punchline = self.cache.value(forKey: CacheKeys.punchline.rawValue)
+        dataBaseManager.saveJoke(setup: setup ?? "", punch: punchline ?? "")
     }
+
+    private func updateCache(setup: String, punchline: String) {
+        self.cache.remove(forKey: CacheKeys.setup.rawValue)
+        self.cache.remove(forKey: CacheKeys.punchline.rawValue)
+        self.cache.insert(setup, forKey: CacheKeys.setup.rawValue)
+        self.cache.insert(punchline, forKey: CacheKeys.punchline.rawValue)
+    }
+}
+
+private enum CacheKeys: String {
+    case setup = "Setup"
+    case punchline = "Punchline"
 }
 
