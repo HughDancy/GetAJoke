@@ -26,6 +26,9 @@
 		D800B6B229C1ABBA0015D19C /* TableViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800B6B129C1ABBA0015D19C /* TableViewAnimator.swift */; };
 		D800B6B729C20E390015D19C /* UILabel+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D800B6B629C20E390015D19C /* UILabel+Extention.swift */; };
 		D876BD102C88697800DEB0CB /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D876BD0F2C88697800DEB0CB /* Cache.swift */; };
+		D876BD132C89AF5400DEB0CB /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D876BD122C89AF5400DEB0CB /* MainTabBar.swift */; };
+		D876BD162C89B4F400DEB0CB /* UIImage + EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = D876BD152C89B4F400DEB0CB /* UIImage + EXT.swift */; };
+		D876BD182C89B6F600DEB0CB /* AssemblyIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D876BD172C89B6F600DEB0CB /* AssemblyIBuilder.swift */; };
 		D8DD9BC82C74516E003A7B73 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DD9BC72C74516E003A7B73 /* DatabaseManager.swift */; };
 		D8DD9BCA2C7451AA003A7B73 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DD9BC92C7451AA003A7B73 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +51,9 @@
 		D800B6B129C1ABBA0015D19C /* TableViewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAnimator.swift; sourceTree = "<group>"; };
 		D800B6B629C20E390015D19C /* UILabel+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extention.swift"; sourceTree = "<group>"; };
 		D876BD0F2C88697800DEB0CB /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		D876BD122C89AF5400DEB0CB /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		D876BD152C89B4F400DEB0CB /* UIImage + EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + EXT.swift"; sourceTree = "<group>"; };
+		D876BD172C89B6F600DEB0CB /* AssemblyIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyIBuilder.swift; sourceTree = "<group>"; };
 		D8DD9BC72C74516E003A7B73 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		D8DD9BC92C7451AA003A7B73 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,13 +215,32 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
+		D876BD112C89AF3C00DEB0CB /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				D876BD122C89AF5400DEB0CB /* MainTabBar.swift */,
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
+		D876BD142C89B4E600DEB0CB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D876BD152C89B4F400DEB0CB /* UIImage + EXT.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		D8DD9BC62C74515F003A7B73 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				D876BD142C89B4E600DEB0CB /* Extension */,
+				D876BD112C89AF3C00DEB0CB /* UIElements */,
 				D8DD9BC72C74516E003A7B73 /* DatabaseManager.swift */,
 				D800B6B129C1ABBA0015D19C /* TableViewAnimator.swift */,
 				D8DD9BC92C7451AA003A7B73 /* NetworkManager.swift */,
 				D876BD0F2C88697800DEB0CB /* Cache.swift */,
+				D876BD172C89B6F600DEB0CB /* AssemblyIBuilder.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -302,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D800B67A29BF4B9E0015D19C /* MainViewController.swift in Sources */,
+				D876BD182C89B6F600DEB0CB /* AssemblyIBuilder.swift in Sources */,
 				D876BD102C88697800DEB0CB /* Cache.swift in Sources */,
 				D800B6A529BF5C930015D19C /* MainView.swift in Sources */,
 				D8DD9BC82C74516E003A7B73 /* DatabaseManager.swift in Sources */,
@@ -309,10 +335,12 @@
 				D800B6B229C1ABBA0015D19C /* TableViewAnimator.swift in Sources */,
 				D800B6B029C07DAB0015D19C /* FavoritesCell.swift in Sources */,
 				D800B6B729C20E390015D19C /* UILabel+Extention.swift in Sources */,
+				D876BD162C89B4F400DEB0CB /* UIImage + EXT.swift in Sources */,
 				D800B6A929C065CF0015D19C /* DBMangaer.swift in Sources */,
 				D800B6A329BF5BF10015D19C /* Joke.swift in Sources */,
 				D800B67629BF4B9E0015D19C /* AppDelegate.swift in Sources */,
 				D8DD9BCA2C7451AA003A7B73 /* NetworkManager.swift in Sources */,
+				D876BD132C89AF5400DEB0CB /* MainTabBar.swift in Sources */,
 				D800B69629BF51070015D19C /* FavoritesViewController.swift in Sources */,
 				D800B67829BF4B9E0015D19C /* SceneDelegate.swift in Sources */,
 				D800B6AD29C06A6A0015D19C /* FavoritesView.swift in Sources */,

@@ -18,8 +18,8 @@ class MainViewController: UIViewController {
         return view as? MainView
     }
     
-    lazy var dataBaseManager: DataBaseSavingProtocol = MainScreenDataBaseManager()
-    lazy var networkManager: MainScreenNetworkManagerProtocol = MainScreenNetworkManager()
+     var dataBaseManager: DataBaseSavingProtocol?
+     var networkManager: MainScreenNetworkManagerProtocol?
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
     
     // MARK: - Button's Action
     @objc func getJoke() {
-        networkManager.getRandomJoke { [weak self] joke in
+        networkManager?.getRandomJoke { [weak self] joke in
             self?.updateCache(setup: joke.setup, punchline: joke.punchline)
             DispatchQueue.main.async {
                 self?.mainView?.setupLabel.setTyping(text: "\(joke.setup) \n \(joke.punchline)")
@@ -42,7 +42,7 @@ class MainViewController: UIViewController {
     @objc func saveJoke() {
         let setup = self.cache.value(forKey: CacheKeys.setup.rawValue)
         let punchline = self.cache.value(forKey: CacheKeys.punchline.rawValue)
-        dataBaseManager.saveJoke(setup: setup ?? "", punch: punchline ?? "")
+        dataBaseManager?.saveJoke(setup: setup ?? "", punch: punchline ?? "")
     }
 
     private func updateCache(setup: String, punchline: String) {

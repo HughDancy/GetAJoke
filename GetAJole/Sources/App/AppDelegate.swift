@@ -14,26 +14,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        let tabBarController = UITabBarController()
-        tabBarController.tabBar.backgroundColor = .white
-        tabBarController.tabBar.tintColor = .purple
-        
-        let firstViewController = MainViewController()
-        firstViewController.tabBarItem = UITabBarItem(title: "Main", image: UIImage(systemName: "face.smiling.inverse"), tag: 0)
-        
-        let secondViewController = FavoritesViewController()
-        secondViewController.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "star.fill"), tag: 1)
-        
-        tabBarController.setViewControllers([
-            firstViewController,
-            secondViewController
-        ], animated: true)
-        
-        window.rootViewController = tabBarController
-        window.makeKeyAndVisible()
-        
-        self.window = window
+//        let window = UIWindow(frame: UIScreen.main.bounds)
+//        let tabBarController = UITabBarController()
+//        tabBarController.tabBar.backgroundColor = .white
+//        tabBarController.tabBar.tintColor = .purple
+//        
+//        let firstViewController = MainViewController()
+//        firstViewController.tabBarItem = UITabBarItem(title: "Main", image: UIImage(systemName: "face.smiling.inverse"), tag: 0)
+//        
+//        let secondViewController = FavoritesViewController()
+//        secondViewController.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "star.fill"), tag: 1)
+//        
+//        tabBarController.setViewControllers([
+//            firstViewController,
+//            secondViewController
+//        ], animated: true)
+//        
+//        window.rootViewController = tabBarController
+//        window.makeKeyAndVisible()
+//        
+//        self.window = window
         
         return true
     }
