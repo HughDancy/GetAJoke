@@ -8,8 +8,7 @@
 import UIKit
 import SnapKit
 
-class FavoritesView: UIView {
-
+final class FavoritesView: UIView {
     // MARK: - Subview
     let favoritesTableView = FavoritesTable()
 

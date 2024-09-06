@@ -8,8 +8,7 @@
 import UIKit
 import SnapKit
 
-class MainView: UIView {
-
+final class MainView: UIView {
     // MARK: - Subview's
     private lazy var backgroundImage: UIImageView = {
         let imageView = UIImageView()
@@ -19,7 +18,7 @@ class MainView: UIView {
         return imageView
     }()
 
-    let setupLabel = createSimpleLabel(with: "Do you want a joke?", size: 25)
+    let setupLabel = MainLabel(text: "Do you want a joke?", size: 25)
     lazy var getJokeButton = MainButton(radius: 25, text: "Get a new Joke", color: .systemPurple)
     let jokeShadowView = ShadowView(cornerRadius: 25)
     lazy var favoriteIcon: UIImageView = {
@@ -52,8 +51,7 @@ class MainView: UIView {
         addSubview(getJokeButton)
     }
 
-    //MARK: - Setup Layout
-
+    // MARK: - Setup Layout
     private func setupLayout() {
         backgroundImage.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
@@ -86,6 +84,5 @@ class MainView: UIView {
             make.width.equalTo(150)
             make.height.equalTo(50)
         }
-
     }
 }

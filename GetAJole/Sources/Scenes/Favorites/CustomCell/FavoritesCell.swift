@@ -12,15 +12,24 @@ final class FavoritesCell: UITableViewCell {
     static let reusableIdentifier = "FavoritesCell"
 
     // MARK: - Subview's
-    private let baseView = createBackView(cornerRadius: 20)
+    private let baseView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 20
+        view.clipsToBounds = true
+        view.layer.borderColor = UIColor.purple.cgColor
+        view.layer.borderWidth = 4
+        return view
+    }()
+
     private lazy var numberLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont(name: "Marker Felt Thin", size: 20)
         return label
     }()
-    private let setupLabel = createSimpleLabel(with: "Test", size: 20)
-    private let punchLabel = createSimpleLabel(with: "Simple", size: 20)
+    private let setupLabel = MainLabel(text: "", size: 20)
+    private let punchLabel = MainLabel(text: "", size: 20)
 
     //MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

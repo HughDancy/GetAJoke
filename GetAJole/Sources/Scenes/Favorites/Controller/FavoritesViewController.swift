@@ -7,12 +7,12 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController {
-    
+final class FavoritesViewController: UIViewController {
+    // MARK: - Propertie's
     var databaseManager: FavoritesDatabaseProtocol?
-    var isScrollToTop = false
-    var lastVelocityYSign = 0
-    
+    private var isScrollToTop = false
+    private var lastVelocityYSign = 0
+
     // MARK: - Subview's
     private var mainView: FavoritesView? {
         guard isViewLoaded else { return nil }
@@ -46,7 +46,7 @@ class FavoritesViewController: UIViewController {
     }
 }
 
-// MARK: - TableView Extension
+    // MARK: - TableView Extension
 extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: FavoriteHeader.reuseIdentifier) as? FavoriteHeader else {
@@ -71,7 +71,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let animation = makeMoveUpWithFadeAnimation(rowHeight: 150, duration: 0.85, delayFactor: 0.02)
+        let animation = TableViewAnimator.makeMoveUpWithFadeAnimation(rowHeight: 150, duration: 0.85, delayFactor: 0.02)
         let animator = TableViewAnimator(animation: animation)
         if self.isScrollToTop == false {
             animator.animate(cell: cell, at: indexPath, in: tableView)
@@ -79,7 +79,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-// MARK: - Extenstion for animation
+    // MARK: - Extenstion for animation
 extension FavoritesViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let currentVelocityY =  scrollView.panGestureRecognizer.velocity(in: scrollView.superview).y

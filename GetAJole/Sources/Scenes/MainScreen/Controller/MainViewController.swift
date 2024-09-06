@@ -7,8 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
-    
+final class MainViewController: UIViewController {
     // MARK: - Properties
     private let cache = Cache<String, String>()
 
@@ -17,9 +16,9 @@ class MainViewController: UIViewController {
         guard isViewLoaded else { return nil }
         return view as? MainView
     }
-    
-     var dataBaseManager: DataBaseSavingProtocol?
-     var networkManager: MainScreenNetworkManagerProtocol?
+
+    var dataBaseManager: DataBaseSavingProtocol?
+    var networkManager: MainScreenNetworkManagerProtocol?
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -28,7 +27,7 @@ class MainViewController: UIViewController {
         mainView?.getJokeButton.addTarget(self, action: #selector(getJoke), for: .touchDown)
         addFavoriteGestureRecognizer()
     }
-    
+
     // MARK: - Button's Action
     @objc func getJoke() {
         mainView?.favoriteIcon.isHighlighted = false
@@ -48,10 +47,10 @@ class MainViewController: UIViewController {
     @objc func saveJoke() {
         UIView.transition(with: self.mainView?.favoriteIcon ?? UIView(),
                           duration: 0.09,
-                                 options: .transitionCrossDissolve,
-                                 animations: {
+                          options: .transitionCrossDissolve,
+                          animations: {
             self.mainView?.favoriteIcon.isHighlighted = true
-               }, completion: nil)
+        }, completion: nil)
         let setup = self.cache.value(forKey: CacheKeys.setup.rawValue)
         let punchline = self.cache.value(forKey: CacheKeys.punchline.rawValue)
         dataBaseManager?.saveJoke(setup: setup ?? "", punch: punchline ?? "")
