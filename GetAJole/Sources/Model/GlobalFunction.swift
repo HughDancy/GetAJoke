@@ -8,18 +8,6 @@
 import UIKit
 
 
-func createShadowView(cornerRadius: CGFloat) -> UIView {
-    let view = UIView()
-    view.backgroundColor = .lightGray
-    view.layer.shadowColor = UIColor.black.cgColor
-    view.layer.shadowOffset = CGSize(width: 4, height: 4)
-    view.layer.shadowOpacity = 0.7
-    view.layer.shadowRadius = 4
-    view.layer.cornerRadius = cornerRadius
-    
-    return view
-}
-
 func createSimpleLabel(with text: String, size: CGFloat) -> UILabel {
     let label = UILabel()
     label.textColor = .black
@@ -40,14 +28,6 @@ func createFavoriteLabel(with text: String, size: CGFloat) -> UILabel {
     return label
 }
 
-func createMainButton(cornerRadius: CGFloat) -> UIButton {
-    let button = UIButton()
-    button.layer.cornerRadius = cornerRadius
-    button.clipsToBounds = true
-    button.titleLabel?.font = UIFont(name: "Noteworthy-Bold", size: 15)
-    
-    return button
-}
 
 func createFavoritesTableView() -> UITableView {
     let tableView = UITableView(frame: .zero, style: .plain)

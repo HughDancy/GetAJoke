@@ -26,11 +26,12 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         view = MainView()
         mainView?.getJokeButton.addTarget(self, action: #selector(getJoke), for: .touchDown)
-        mainView?.getToFavoriteButton.addTarget(self, action: #selector(saveJoke), for: .touchDown)
+        addFavoriteGestureRecognizer()
     }
     
     // MARK: - Button's Action
     @objc func getJoke() {
+        mainView?.favoriteIcon.isHighlighted = false
         networkManager?.getRandomJoke { [weak self] joke in
             self?.updateCache(setup: joke.setup, punchline: joke.punchline)
             DispatchQueue.main.async {
@@ -38,8 +39,19 @@ class MainViewController: UIViewController {
             }
         }
     }
-    
+
+    func addFavoriteGestureRecognizer() {
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(saveJoke))
+        mainView?.favoriteIcon.addGestureRecognizer(gestureRecognizer)
+    }
+
     @objc func saveJoke() {
+        UIView.transition(with: self.mainView?.favoriteIcon ?? UIView(),
+                          duration: 0.09,
+                                 options: .transitionCrossDissolve,
+                                 animations: {
+            self.mainView?.favoriteIcon.isHighlighted = true
+               }, completion: nil)
         let setup = self.cache.value(forKey: CacheKeys.setup.rawValue)
         let punchline = self.cache.value(forKey: CacheKeys.punchline.rawValue)
         dataBaseManager?.saveJoke(setup: setup ?? "", punch: punchline ?? "")
