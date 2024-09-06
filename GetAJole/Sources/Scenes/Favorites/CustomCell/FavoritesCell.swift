@@ -9,7 +9,8 @@ import UIKit
 import SnapKit
 
 final class FavoritesCell: UITableViewCell {
-    
+    static let reusableIdentifier = "FavoritesCell"
+
     // MARK: - Subview's
     private let baseView = createBackView(cornerRadius: 20)
     private lazy var numberLabel: UILabel = {

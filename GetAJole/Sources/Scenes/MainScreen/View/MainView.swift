@@ -74,14 +74,14 @@ class MainView: UIView {
         }
 
         jokeShadowView.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(180)
+            make.bottom.equalToSuperview().inset(150)
             make.trailing.equalToSuperview().inset(35)
             make.height.equalTo(50)
             make.width.equalTo(getJokeButton)
         }
 
         getJokeButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(180)
+            make.bottom.equalToSuperview().inset(150)
             make.trailing.equalToSuperview().inset(35)
             make.width.equalTo(150)
             make.height.equalTo(50)

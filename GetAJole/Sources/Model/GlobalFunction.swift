@@ -29,16 +29,6 @@ func createFavoriteLabel(with text: String, size: CGFloat) -> UILabel {
 }
 
 
-func createFavoritesTableView() -> UITableView {
-    let tableView = UITableView(frame: .zero, style: .plain)
-    tableView.backgroundColor = .systemGray5
-    tableView.showsVerticalScrollIndicator = false
-    tableView.register(FavoritesCell.self, forCellReuseIdentifier: "favoritesCell")
-    tableView.separatorStyle = .none
-    
-    return tableView
-}
-
 func createBackView(cornerRadius: CGFloat) -> UIView {
     let view = UIView()
     view.backgroundColor = .white

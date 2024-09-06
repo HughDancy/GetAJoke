@@ -11,7 +11,8 @@ import SnapKit
 class FavoritesView: UIView {
 
     // MARK: - Subview
-    let favoritesTableView = createFavoritesTableView()
+    let favoritesTableView = FavoritesTable()
+    
     let label = createFavoriteLabel(with: "Favorite Jokes", size: 35)
 
     // MARK: - Init
@@ -42,7 +43,8 @@ class FavoritesView: UIView {
 
         favoritesTableView.snp.makeConstraints { make in
             make.top.equalTo(label).inset(45)
-            make.leading.trailing.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().inset(35)
         }
     }
 }
