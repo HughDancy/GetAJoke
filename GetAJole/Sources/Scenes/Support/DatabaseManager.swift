@@ -14,6 +14,7 @@ protocol DataBaseSavingProtocol: AnyObject {
 
 protocol FavoritesDatabaseProtocol: AnyObject {
     func getSavedJokes() ->  Results<Joke>
+    func deleteJoke(_ joke: Joke)
 }
 
 final class MainScreenDataBaseManager: DataBaseSavingProtocol {
@@ -37,7 +38,14 @@ final class MainScreenDataBaseManager: DataBaseSavingProtocol {
 
 final class FavoritesDataBaseManager: FavoritesDatabaseProtocol {
     func getSavedJokes() ->  Results<Joke> {
-            let realm = try! Realm()
-            return realm.objects(Joke.self)
+        let realm = try! Realm()
+        return realm.objects(Joke.self)
+    }
+
+    func deleteJoke(_ joke: Joke) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.delete(joke)
+        }
     }
 }

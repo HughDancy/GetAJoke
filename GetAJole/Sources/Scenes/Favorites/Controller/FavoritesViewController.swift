@@ -77,6 +77,31 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
             animator.animate(cell: cell, at: indexPath, in: tableView)
         }
     }
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
+            -> UISwipeActionsConfiguration? {
+            let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _, _ in
+                tableView.dataSource?.tableView?(tableView, commit: .delete, forRowAt: indexPath)
+
+            }
+            deleteAction.image = UIImage(named: "trash")
+            deleteAction.backgroundColor = .systemGray5
+            let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+            return configuration
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let allJokes = self.databaseManager?.getSavedJokes()
+            guard let deletedJoke = allJokes?[indexPath.row] else { return }
+            self.databaseManager?.deleteJoke(deletedJoke)
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .right)
+            tableView.endUpdates()
+        }
+    }
+
+
 }
 
     // MARK: - Extenstion for animation
