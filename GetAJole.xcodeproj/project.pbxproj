@@ -32,6 +32,7 @@
 		D876BD1A2C8AA76900DEB0CB /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D876BD192C8AA76900DEB0CB /* MainButton.swift */; };
 		D89532D42C8AB4E7007CB989 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89532D32C8AB4E7007CB989 /* ShadowView.swift */; };
 		D89532D82C8AC93C007CB989 /* FavoritesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89532D72C8AC93C007CB989 /* FavoritesTable.swift */; };
+		D89532DA2C8AD2AB007CB989 /* FavoriteHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89532D92C8AD2AB007CB989 /* FavoriteHeader.swift */; };
 		D8DD9BC82C74516E003A7B73 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DD9BC72C74516E003A7B73 /* DatabaseManager.swift */; };
 		D8DD9BCA2C7451AA003A7B73 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DD9BC92C7451AA003A7B73 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		D876BD192C8AA76900DEB0CB /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		D89532D32C8AB4E7007CB989 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		D89532D72C8AC93C007CB989 /* FavoritesTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTable.swift; sourceTree = "<group>"; };
+		D89532D92C8AD2AB007CB989 /* FavoriteHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteHeader.swift; sourceTree = "<group>"; };
 		D8DD9BC72C74516E003A7B73 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		D8DD9BC92C7451AA003A7B73 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -228,6 +230,7 @@
 				D876BD192C8AA76900DEB0CB /* MainButton.swift */,
 				D89532D32C8AB4E7007CB989 /* ShadowView.swift */,
 				D89532D72C8AC93C007CB989 /* FavoritesTable.swift */,
+				D89532D92C8AD2AB007CB989 /* FavoriteHeader.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				D876BD132C89AF5400DEB0CB /* MainTabBar.swift in Sources */,
 				D800B69629BF51070015D19C /* FavoritesViewController.swift in Sources */,
 				D800B67829BF4B9E0015D19C /* SceneDelegate.swift in Sources */,
+				D89532DA2C8AD2AB007CB989 /* FavoriteHeader.swift in Sources */,
 				D800B6AD29C06A6A0015D19C /* FavoritesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

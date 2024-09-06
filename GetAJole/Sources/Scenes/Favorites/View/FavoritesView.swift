@@ -12,8 +12,6 @@ class FavoritesView: UIView {
 
     // MARK: - Subview
     let favoritesTableView = FavoritesTable()
-    
-    let label = createFavoriteLabel(with: "Favorite Jokes", size: 35)
 
     // MARK: - Init
     override init(frame: CGRect) {
@@ -29,22 +27,15 @@ class FavoritesView: UIView {
 
     // MARK: - Setup Hierarchy
     private func setupHierarchy() {
-        addSubview(label)
         addSubview(favoritesTableView)
     }
 
     // MARK: - Setup Layout
     private func setupLayout() {
-        label.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(55)
-            make.centerX.equalToSuperview()
-            make.height.equalTo(37)
-        }
-
         favoritesTableView.snp.makeConstraints { make in
-            make.top.equalTo(label).inset(45)
+            make.top.equalToSuperview().offset(10)
             make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview().inset(35)
+            make.bottom.equalToSuperview()
         }
     }
 }

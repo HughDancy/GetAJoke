@@ -9,7 +9,7 @@ import UIKit
 final class FavoritesTable: UITableView {
     // MARK: - Init
     override init(frame: CGRect, style: UITableView.Style) {
-        super.init(frame: .zero, style: .plain)
+        super.init(frame: .zero, style: .grouped)
         self.setupTableView()
     }
 
@@ -21,6 +21,7 @@ final class FavoritesTable: UITableView {
     private func setupTableView() {
         self.backgroundColor = .systemGray5
         self.showsVerticalScrollIndicator = false
+        self.register(FavoriteHeader.self, forHeaderFooterViewReuseIdentifier: FavoriteHeader.reuseIdentifier)
         self.register(FavoritesCell.self, forCellReuseIdentifier: FavoritesCell.reusableIdentifier)
         self.separatorStyle = .none
     }

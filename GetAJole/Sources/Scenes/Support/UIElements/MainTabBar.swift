@@ -18,6 +18,10 @@ final class MainTabBar: UITabBarController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBar.isTranslucent = true
+        UITabBar.appearance().backgroundImage = UIImage()
+        UITabBar.appearance().layer.borderWidth = 0.0
+        UITabBar.appearance().clipsToBounds = true
         setView()
     }
 
