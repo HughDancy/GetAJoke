@@ -29,6 +29,7 @@
 		D876BD132C89AF5400DEB0CB /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D876BD122C89AF5400DEB0CB /* MainTabBar.swift */; };
 		D876BD162C89B4F400DEB0CB /* UIImage + EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = D876BD152C89B4F400DEB0CB /* UIImage + EXT.swift */; };
 		D876BD182C89B6F600DEB0CB /* AssemblyIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D876BD172C89B6F600DEB0CB /* AssemblyIBuilder.swift */; };
+		D876BD1A2C8AA76900DEB0CB /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D876BD192C8AA76900DEB0CB /* MainButton.swift */; };
 		D8DD9BC82C74516E003A7B73 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DD9BC72C74516E003A7B73 /* DatabaseManager.swift */; };
 		D8DD9BCA2C7451AA003A7B73 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DD9BC92C7451AA003A7B73 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		D876BD122C89AF5400DEB0CB /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		D876BD152C89B4F400DEB0CB /* UIImage + EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + EXT.swift"; sourceTree = "<group>"; };
 		D876BD172C89B6F600DEB0CB /* AssemblyIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyIBuilder.swift; sourceTree = "<group>"; };
+		D876BD192C8AA76900DEB0CB /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		D8DD9BC72C74516E003A7B73 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		D8DD9BC92C7451AA003A7B73 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				D876BD122C89AF5400DEB0CB /* MainTabBar.swift */,
+				D876BD192C8AA76900DEB0CB /* MainButton.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				D800B6A329BF5BF10015D19C /* Joke.swift in Sources */,
 				D800B67629BF4B9E0015D19C /* AppDelegate.swift in Sources */,
 				D8DD9BCA2C7451AA003A7B73 /* NetworkManager.swift in Sources */,
+				D876BD1A2C8AA76900DEB0CB /* MainButton.swift in Sources */,
 				D876BD132C89AF5400DEB0CB /* MainTabBar.swift in Sources */,
 				D800B69629BF51070015D19C /* FavoritesViewController.swift in Sources */,
 				D800B67829BF4B9E0015D19C /* SceneDelegate.swift in Sources */,

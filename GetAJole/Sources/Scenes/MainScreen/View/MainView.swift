@@ -20,7 +20,8 @@ class MainView: UIView {
     }()
 
     let setupLabel = createSimpleLabel(with: "Do you want a joke?", size: 25)
-    lazy var getJokeButton = createMainButton(cornerRadius: 25)
+//    lazy var getJokeButton = createMainButton(cornerRadius: 25)
+    lazy var getJokeButton = MainButton(radius: 25, text: "Get a new Joke", color: .systemPurple)
     lazy var getToFavoriteButton = createMainButton(cornerRadius: 25)
     let jokeShadowView = createShadowView(cornerRadius: 25)
     let favoriteShadowView = createShadowView(cornerRadius: 25)
@@ -73,12 +74,14 @@ class MainView: UIView {
         getJokeButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(180)
             make.trailing.equalToSuperview().inset(35)
+            make.width.equalTo(150)
             make.height.equalTo(50)
         }
         
         favoriteShadowView.snp.makeConstraints { make in
             make.top.equalTo(getJokeButton).inset(65)
             make.centerX.equalTo(getJokeButton)
+            make.trailing.equalToSuperview().inset(35)
             make.height.equalTo(50)
             make.width.equalTo(getToFavoriteButton)
         }
@@ -92,17 +95,17 @@ class MainView: UIView {
     
     // MARK: - Button's Configuration
     private func buttonsConfigurate() {
-        var getConfiguration = UIButton.Configuration.filled()
-        getConfiguration.baseBackgroundColor = .purple
-        getConfiguration.title = "Get a new Joke"
-        getConfiguration.titleAlignment = .center
+//        var getConfiguration = UIButton.Configuration.filled()
+//        getConfiguration.baseBackgroundColor = .purple
+//        getConfiguration.title = "Get a new Joke"
+//        getConfiguration.titleAlignment = .center
         
         var favoriteConfigutation = UIButton.Configuration.filled()
         favoriteConfigutation.baseBackgroundColor = .orange
         favoriteConfigutation.title = "Add To Favorites"
         favoriteConfigutation.titleAlignment = .center
         
-        getJokeButton.configuration = getConfiguration
+//        getJokeButton.configuration = getConfiguration
         getToFavoriteButton.configuration = favoriteConfigutation
     }
 }
