@@ -35,15 +35,15 @@ final class MainTabBar: UITabBarController {
         tabBarView.translatesAutoresizingMaskIntoConstraints = false
         tabBarView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
         tabBarView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -60).isActive = true
-        tabBarView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        tabBarView.heightAnchor.constraint(equalToConstant: 65).isActive = true
         tabBarView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        tabBarView.layer.cornerRadius = 30
+        tabBarView.layer.cornerRadius = 35
 
         tabbarItemBackgroundView.translatesAutoresizingMaskIntoConstraints = false
         tabbarItemBackgroundView.widthAnchor.constraint(equalTo: tabBarView.widthAnchor, multiplier: 1/CGFloat(2), constant: -10).isActive = true
         tabbarItemBackgroundView.heightAnchor.constraint(equalTo: tabBarView.heightAnchor, constant: -10).isActive = true
         tabbarItemBackgroundView.centerYAnchor.constraint(equalTo: tabBarView.centerYAnchor).isActive = true
-        tabbarItemBackgroundView.layer.cornerRadius = 25
+        tabbarItemBackgroundView.layer.cornerRadius = 30
         tabbarItemBackgroundView.backgroundColor = .systemPurple
     }
 
@@ -84,6 +84,7 @@ final class MainTabBar: UITabBarController {
         }
         self.centerConstraint = tabbarItemBackgroundView.centerXAnchor.constraint(equalTo: buttons[0].centerXAnchor)
         self.centerConstraint?.isActive = true
+        buttons[0].tintColor = .label
     }
 
     // MARK: - Button Actions
@@ -97,7 +98,7 @@ final class MainTabBar: UITabBarController {
             self.centerConstraint?.isActive = false
             self.centerConstraint = self.tabbarItemBackgroundView.centerXAnchor.constraint(equalTo: self.buttons[sender.tag].centerXAnchor)
             self.centerConstraint?.isActive = true
-            self.buttons[sender.tag].tintColor = .black
+            self.buttons[sender.tag].tintColor = .label
             self.tabBarView.layoutIfNeeded()
         }
     }
